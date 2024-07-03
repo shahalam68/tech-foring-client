@@ -7,7 +7,7 @@ const Dashboard = () => {
     const navigate = useNavigate()
     axios.defaults.withCredentials = true;
     useEffect(()=>{
-        axios.get("http://localhost:5000/dashboard")
+        axios.get("https://tech-foring-test-server.vercel.app/dashboard")
         
         .then(res => {
             if(res.data.valid){

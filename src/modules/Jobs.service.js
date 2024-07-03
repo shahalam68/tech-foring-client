@@ -5,7 +5,7 @@ export const getAllJobs = async () => {
       throw new Error("No access token found");
     }
   
-    const response = await fetch("http://localhost:5000/jobs", {
+    const response = await fetch("https://tech-foring-test-server.vercel.app/jobs", {
       headers: {
         Authorization: `Bearer ${accessToken}`,
       },

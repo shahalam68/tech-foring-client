@@ -23,7 +23,7 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (email, password) => {
     try {
-      const response = await axios.post('http://localhost:5000/login', { email, password }, { withCredentials: true });
+      const response = await axios.post('https://tech-foring-test-server.vercel.app/login', { email, password }, { withCredentials: true });
       console.log('Login response:', response);
       if (response.data.Login) {
         const token = response.data.accessToken;

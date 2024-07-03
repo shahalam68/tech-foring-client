@@ -11,7 +11,7 @@ const SignUp = () => {
   const navigate = useNavigate();
   const handleSubmit = (event) => {
     event.preventDefault();
-    axios.post('http://localhost:5000/register',{name,email,password})
+    axios.post('https://tech-foring-test-server.vercel.app/register',{name,email,password})
     .then(res => {
       navigate('/login')
     })

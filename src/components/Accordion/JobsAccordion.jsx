@@ -27,7 +27,7 @@ export default function JobsAccordion() {
   const handleEditRole = async () => {
     try {
       await axios.put(
-        `http://localhost:5000/update/job/role/${selectedJob._id}`,
+        `https://tech-foring-test-server.vercel.app/update/job/role/${selectedJob._id}`,
         {
           oldRole,
           newRole,
@@ -57,7 +57,7 @@ export default function JobsAccordion() {
   const handleDeleteRole = async (categoryId, role) => {
     try {
       await axios.delete(
-        `http://localhost:5000/delete/job/role/${categoryId}`,
+        `https://tech-foring-test-server.vercel.app/delete/job/role/${categoryId}`,
         {
           data: { role },
         }
