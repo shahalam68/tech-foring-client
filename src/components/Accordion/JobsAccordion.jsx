@@ -78,58 +78,46 @@ export default function JobsAccordion() {
 
   return (
     <div>
-      {data.length === 0 ? (
-        <Box>
-          <Typography variant="h6">No jobs available now.</Typography>
-          <Button
-            onClick={() => {
-              // Handle create job button click action here
-              console.log("Create job button clicked");
-            }}
-            variant="outlined"
-            sx={{ mt: 2 }}
+      {data.map((job, index) => (
+        <Accordion
+          key={index}
+          className="mb-4 mt-4"
+          sx={{
+            border: "2px solid rgba(0,0,0,.2)",
+            boxShadow: "none",
+            backgroundColor: "rgb(239, 243, 246)",
+            borderRadius: "8px",
+            "&:first-of-type": {
+              borderTopLeftRadius: "8px",
+              borderTopRightRadius: "8px",
+            },
+            "&:last-of-type": {
+              borderBottomLeftRadius: "8px",
+              borderBottomRightRadius: "8px",
+            },
+          }}
+        >
+          <AccordionSummary
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls={`panel${index}-content`}
+            id={`panel${index}-header`}
+            className="text-xl"
           >
-            Create Job
-          </Button>
-        </Box>
-      ) : (
-        data.map((job, index) => (
-          <Accordion
-            key={index}
-            className="mb-4 mt-4"
-            sx={{
-              border: "2px solid rgba(0,0,0,.2)",
-              boxShadow: "none",
-              backgroundColor: "rgb(239, 243, 246)",
-              borderRadius: "8px",
-              "&:first-of-type": {
-                borderTopLeftRadius: "8px",
-                borderTopRightRadius: "8px",
-              },
-              "&:last-of-type": {
-                borderBottomLeftRadius: "8px",
-                borderBottomRightRadius: "8px",
-              },
-            }}
-          >
-            <AccordionSummary
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls={`panel${index}-content`}
-              id={`panel${index}-header`}
-              className="text-xl"
+            <Typography
+              sx={{
+                color: "rgba(0, 0, 0, 0.6)",
+                fontWeight: "600",
+                fontSize: "19px",
+              }}
             >
-              <Typography
-                sx={{
-                  color: "rgba(0, 0, 0, 0.6)",
-                  fontWeight: "600",
-                  fontSize: "19px",
-                }}
-              >
-                {job.category} {/* Show job category */}
-              </Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-              {job.roles.map((role, roleIndex) => (
+              {job.category} {/* Show job category */}
+            </Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            {job.roles.length === 0 ? (
+              <Typography>No roles in this category.</Typography>
+            ) : (
+              job.roles.map((role, roleIndex) => (
                 <Box
                   key={roleIndex}
                   sx={{
@@ -178,11 +166,11 @@ export default function JobsAccordion() {
                     </Button>
                   </Box>
                 </Box>
-              ))}
-            </AccordionDetails>
-          </Accordion>
-        ))
-      )}
+              ))
+            )}
+          </AccordionDetails>
+        </Accordion>
+      ))}
 
       <Dialog open={open} onClose={handleClose}>
         <DialogTitle>Edit Job Role</DialogTitle>
