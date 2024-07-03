@@ -115,7 +115,39 @@ export default function JobsAccordion() {
           </AccordionSummary>
           <AccordionDetails>
             {job.roles.length === 0 ? (
-              <Typography>No roles in this category.</Typography>
+              <Box
+              sx={{
+                margin: "12px 0",
+                fontSize: "16px",
+                backgroundColor: "#fff",
+                padding: "10px",
+                borderRadius: "5px",
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+              }}
+            >
+              <Typography>NO Job Available </Typography> {/* Show job role */}
+              <Box>
+                <Button
+                  // onClick={() => handleClickOpen(job, role)}
+                  sx={{
+                    backgroundColor: "#fff",
+                    border: "1px solid #f5f5f5",
+                    marginRight: "15px",
+                    borderRadius: "5px",
+                    color: "#000",
+                    "&:hover": {
+                      backgroundColor: "#182f59",
+                      color: "#fff",
+                    },
+                  }}
+                >
+                  <Typography sx={{ padding: "5px" }}>Edit Job</Typography>
+                </Button>
+              </Box>
+            </Box>
+              
             ) : (
               job.roles.map((role, roleIndex) => (
                 <Box
