@@ -143,7 +143,6 @@ export default function JobsAccordion() {
                     },
                   }}
                 >
-                  <Typography sx={{ padding: "5px" }}>Edit Job</Typography>
                 </Button>
               </Box>
             </Box>
