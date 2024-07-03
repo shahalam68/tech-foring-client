@@ -127,10 +127,9 @@ export default function JobsAccordion() {
                 alignItems: "center",
               }}
             >
-              <Typography>NO Job Available </Typography> {/* Show job role */}
+              <Typography>No Job Available </Typography> {/* Show job role */}
               <Box>
                 <Button
-                  // onClick={() => handleClickOpen(job, role)}
                   sx={{
                     backgroundColor: "#fff",
                     border: "1px solid #f5f5f5",
@@ -143,6 +142,7 @@ export default function JobsAccordion() {
                     },
                   }}
                 >
+                  <Typography sx={{ padding: "5px" }}>Edit Job</Typography>
                 </Button>
               </Box>
             </Box>
