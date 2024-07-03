@@ -79,12 +79,12 @@ const SignUp = () => {
               },
             }}
           >
-            Login
+            Sign up
           </Button>
-          <Typography variant="p" component="h5" gutterBottom>
-            Already have an account please{" "}
+          <Typography sx={{display:"flex" ,alignItems:'center', justifyContent:'center'}} variant="p" component="h5" gutterBottom>
+            Already have an account please? {" "}
             <span className="text-[#182A59] underline ">
-              <Link to="/login">Login</Link>
+              <Link to="/login"> Sign Up</Link>
             </span>
           </Typography>
         </Box>

@@ -69,7 +69,7 @@ const Login = () => {
           >
             Login
           </Button>
-          <Typography variant="p" component="h5" gutterBottom>
+          <Typography sx={{display:"flex" ,alignItems:'center', justifyContent:'center'}}  variant="p" component="h5" gutterBottom>
             Don’t have an account?{" "}
             <span className="text-[#182A59] ">
               <Link to="/register">SignUp</Link>
